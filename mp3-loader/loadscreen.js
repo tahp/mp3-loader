@@ -28,7 +28,7 @@
         height: 100%;
         width: 0%;
         background: limegreen;
-        transition: width 0.3s;
+        transition: width 0.3s ease;
       }
     </style>
     <h1>Loading...</h1>
@@ -51,10 +51,11 @@
   };
 
   window.addEventListener('load', () => {
+    // Simulate a 3-second loading delay AFTER page is fully loaded
     progressBar.style.width = '100%';
     setTimeout(() => {
       loader.remove();
       document.body.style.overflow = 'auto';
-    }, 500);
+    }, 3000); // <-- adjust delay here if needed
   });
 })();
